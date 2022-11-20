@@ -1,0 +1,38 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#iterable Return type
+
+block story
+    +storyPoint('initial')
+        p Return statement
+    +storyPoint('return-type')
+        p Returns a Generator Object
+
+block code
+    code-point(step-initial='faded')
+        div
+            include:code(line=1) ./return-value.js
+        br
+    code-point(step-initial='', step-return-type='faded')
+        div
+            include:code(line=3) ./return-value.js
+        div
+            include:code(line=4) ./return-value.js
+        div
+            include:code(line=5) ./return-value.js
+        div
+            include:code(line=6) ./return-value.js
+        code-point(step-initial='active')
+            include:code(line=7) ./return-value.js
+        div
+            include:code(line=8) ./return-value.js
+    br
+    code-point(step-initial='inline-hidden', step-return-type='')
+        div
+            include:code(line=10) ./return-value.js
+        code-point(step-return-type='active')
+            include:code(line=11) ./return-value.js
+        div
+            include:code(line=12) ./return-value.js

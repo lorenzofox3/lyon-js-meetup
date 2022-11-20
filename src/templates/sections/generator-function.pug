@@ -1,0 +1,39 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#generator-functions Generator function
+
+block story
+    +storyPoint('initial')
+        p Function declaration
+    +storyPoint('yield-expression')
+        p yield expression
+    +storyPoint('yield-alone')
+        p Single statement
+    +storyPoint('yield-assignation')
+        p Assignation
+    +storyPoint('yield-both')
+        p Bidirectional
+    +storyPoint('yield-delegation')
+        p Delegation
+
+block code
+    code-point(step-initial='active', step-yield-expression='faded')
+        include:code(line=1) ./generator-function.js
+    code-point(step-initial='inline-hidden', step-yield-expression='active', step-yield-alone='faded')
+        div
+            include:code(line=2) ./generator-function.js
+        div
+            include:code(line=3) ./generator-function.js
+    code-point(step-initial='inline-hidden', step-yield-alone='active', step-yield-assignation='faded')
+        include:code(line=4) ./generator-function.js
+    code-point(step-initial='inline-hidden', step-yield-assignation='active', step-yield-both='faded')
+        include:code(line=5) ./generator-function.js
+    code-point(step-initial='inline-hidden', step-yield-both='active', step-yield-delegation='faded')
+        include:code(line=6) ./generator-function.js
+    code-point(step-initial='inline-hidden', step-yield-delegation='active')
+        include:code(line=7) ./generator-function.js
+    div
+        include:code(line=8) ./generator-function.js
+

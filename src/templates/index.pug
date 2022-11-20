@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Build a user interface with Javascript coroutines
+        link(rel="stylesheet", type="text/css", href="style/prism-tomorrow.css")
+        link(rel="stylesheet", type="text/css", href="style/theme.css")
+        script(type='module', async, src='js/index.js')
+    body
+        main#main.scrollable
+            section#definition.centered
+                h2.visually-hidden Definition
+                figure
+                    blockquote.centered(cite='https://en.wikipedia.org/wiki/Coroutine')
+                        p.centered.
+                            Coroutines are computer program components that generalize subroutines [...], by allowing execution to be suspended and resumed. Coroutines are well-suited for
+                            implementing familiar program components such as cooperative tasks, exceptions, event loops,
+                            iterators, infinite lists and pipes.
+                    figcaption -Wikipedia
+            include ./sections/generator-function.pug
+            include ./sections/return-value.pug
+            include ./sections/iterable-protocol.pug

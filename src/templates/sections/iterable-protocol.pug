@@ -1,0 +1,71 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#iterable Generator Object: iterable
+
+block story
+    +storyPoint('initial')
+        p implements the iterable protocol
+    +storyPoint('spread')
+        p spread
+    +storyPoint('for-of')
+        p for .. of loop
+    +storyPoint('generator-delegation')
+        p generator delegation
+
+block code
+    code-point(step-initial='', step-spread='block-hidden')
+        div
+            include:code(line=1) ./iterable-protocol.js
+        code-point(step-initial='active')
+            include:code(line=2) ./iterable-protocol.js
+        div
+            include:code(line=3) ./iterable-protocol.js
+        div
+            include:code(line=4) ./iterable-protocol.js
+        div
+            include:code(line=5) ./iterable-protocol.js
+    code-point(step-initial='block-hidden', step-spread='', step-various-api='block-hidden')
+        code-point(step-initial='', step-for-of='faded')
+            div
+                include:code(line=7) ./iterable-protocol.js
+            code-point(step-initial='active', step-for-of='')
+                include:code(line=8) ./iterable-protocol.js
+            div
+                include:code(line=9) ./iterable-protocol.js
+            br
+        code-point(step-spread='inline-hidden', step-for-of='', step-generator-delegation='faded')
+            div
+                include:code(line=11) ./iterable-protocol.js
+            div
+                include:code(line=12) ./iterable-protocol.js
+            code-point(step-for-of='active', step-generator-delegation='')
+                include:code(line=13) ./iterable-protocol.js
+            div
+                include:code(line=14) ./iterable-protocol.js
+            div
+                include:code(line=15) ./iterable-protocol.js
+            div
+                include:code(line=16) ./iterable-protocol.js
+            div
+                include:code(line=17) ./iterable-protocol.js
+            br
+        code-point(step-spread='inline-hidden', step-generator-delegation='')
+            div
+                include:code(line=23) ./iterable-protocol.js
+            div
+                include:code(line=24) ./iterable-protocol.js
+            div
+                include:code(line=25) ./iterable-protocol.js
+            code-point(step-generator-delegation='active')
+                include:code(line=26) ./iterable-protocol.js
+            div
+                include:code(line=27) ./iterable-protocol.js
+            div
+                include:code(line=28) ./iterable-protocol.js
+            div
+                include:code(line=29) ./iterable-protocol.js
+            div
+                include:code(line=30) ./iterable-protocol.js
+
