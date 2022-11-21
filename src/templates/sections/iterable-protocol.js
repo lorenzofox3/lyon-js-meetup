@@ -1,7 +1,7 @@
 test('generator object implements the @@iterator method', (t) => {
   t.eq(typeof gen()[Symbol.iterator], 'function');
   t.eq(typeof [][Symbol.iterator], 'function');
-  t.eq(typeof new Map[Symbol.iterator](), 'function');
+  t.eq(typeof new Map()[Symbol.iterator], 'function');
 });
 
 test('generator object can be spread', (t) => {

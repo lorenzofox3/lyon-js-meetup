@@ -1,0 +1,48 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#iterator Generator Object: Iterator
+
+block story
+    +storyPoint('initial')
+        p Implements the iterator protocol
+    +storyPoint('next')
+        p Calling next returns an iterator result
+    +storyPoint('return')
+        p Return is in the sequence
+    +storyPoint('exhausted')
+        p Exhausted
+
+block code
+    code-point(step-initial='', step-next='block-hidden')
+        div
+            include:code(line=1) ./iterator-protocol.js
+        div
+            include:code(line=2) ./iterator-protocol.js
+        code-point(step-initial='active')
+            include:code(line=3) ./iterator-protocol.js
+        div
+            include:code(line=4) ./iterator-protocol.js
+        div
+            include:code(line=5) ./iterator-protocol.js
+        div
+            include:code(line=6) ./iterator-protocol.js
+    code-point(step-initial='block-hidden', step-next='')
+            div
+                include:code(line=8) ./iterator-protocol.js
+            code-point(step-initial='', step-return='faded')
+                div
+                    include:code(line=9) ./iterator-protocol.js
+                code-point(step-next='active', step-return='')
+                    include:code(line=10) ./iterator-protocol.js
+                div
+                    include:code(line=11) ./iterator-protocol.js
+                div
+                    include:code(line=12) ./iterator-protocol.js
+            code-point(step-initial='inline-hidden', step-return='active', step-exhausted='faded')
+                include:code(line=13) ./iterator-protocol.js
+            code-point(step-initial='inline-hidden', step-exhausted='active')
+                include:code(line=14) ./iterator-protocol.js
+            div
+                include:code(line=15) ./iterator-protocol.js
