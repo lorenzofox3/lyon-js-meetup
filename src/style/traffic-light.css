@@ -1,0 +1,27 @@
+#traffic-light{
+    --size: 80px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 8px;
+}
+
+#traffic-light > * {
+    width: var(--size);
+    height: var(--size);
+    background: darkgray;
+    transition: background 0.5s;
+    border: 4px solid black;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+#traffic-light.red > :first-child {
+    background: red;
+}
+#traffic-light.orange > :nth-child(2) {
+    background: orange;
+}
+#traffic-light.green > :last-child {
+    background: green;
+}

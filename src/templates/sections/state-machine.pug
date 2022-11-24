@@ -1,0 +1,77 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#state-machine State machine
+
+block story
+    +storyPoint('initial')
+        p Lazy evaluation and infinite loop
+    +storyPoint('alternative')
+        p Or delegate to an ... iterable
+    +storyPoint('hide-protocol')
+        p Generator is an implementation detail
+    +storyPoint('process')
+        p Trigger and react to state change
+
+block code
+    code-point(step-initial='', step-alternative='block-hidden')
+        div
+            include:code(line=9) ./state-machine.js
+        code-point(step-initial='active')
+            include:code(line=10) ./state-machine.js
+        div
+            include:code(line=11) ./state-machine.js
+        div
+            include:code(line=12) ./state-machine.js
+        div
+            include:code(line=13) ./state-machine.js
+        div
+            include:code(line=14) ./state-machine.js        
+        div
+            include:code(line=15) ./state-machine.js
+    code-point(step-initial='block-hidden', step-alternative='', step-process='block-hidden')
+        code-point(step-initial='', step-hide-protocol='faded')
+            div
+                include:code(line=17) ./state-machine.js
+            br
+            div
+                include:code(line=19) ./state-machine.js
+            div
+                include:code(line=20) ./state-machine.js
+            code-point(step-alternative='active', step-hide-protocol='')
+                include:code(line=21) ./state-machine.js
+            div
+                include:code(line=22) ./state-machine.js
+            div
+                include:code(line=23) ./state-machine.js
+        br
+        code-point(step-initial='inline-hidden', step-hide-protocol='')
+            div
+                include:code(line=25) ./state-machine.js
+            div
+                include:code(line=26) ./state-machine.js
+            code-point(step-hide-protocol='active')
+                include:code(line=27) ./state-machine.js
+            div
+                include:code(line=28) ./state-machine.js
+    code-point(step-initial='block-hidden', step-process='')
+        code-point(step-process='active')
+            include:code(line=30) ./state-machine.js
+        br
+        div
+            include:code(line=32) ./state-machine.js
+        br
+        div
+            include:code(line=33) ./state-machine.js
+        code-point(step-process='active')
+            include:code(line=34) ./state-machine.js
+        div
+            include:code(line=35) ./state-machine.js
+        div
+            include:code(line=36) ./state-machine.js
+        div
+            include:code(line=37) ./state-machine.js
+        br
+        div
+            include:code(line=39) ./state-machine.js
