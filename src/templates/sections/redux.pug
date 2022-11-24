@@ -1,0 +1,201 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#redux Bidirectional
+
+block story
+    +storyPoint('initial')
+        p both direction
+    +storyPoint('coroutine')
+        p coroutine wrapper
+    +storyPoint('reducer')
+        p reducer example
+    +storyPoint('dispatch')
+        p dispatch action
+    +storyPoint('event-emitter')
+        p Digression: create a subscription mechanism
+    +storyPoint('store')
+        p create a "store"
+    +storyPoint('enjoy')
+        p And enjoy !
+
+block code
+    code-point(step-initial='', step-reducer='block-hidden')
+        code-point(step-initial='', step-coroutine='faded')
+            div
+                include:code(line=1) ./redux.js
+            div
+                include:code(line=2) ./redux.js
+            div
+                include:code(line=3) ./redux.js
+            code-point(step-initial='active', step-coroutine='')
+                include:code(line=4) ./redux.js
+            div
+                include:code(line=5) ./redux.js
+            div
+                include:code(line=6) ./redux.js
+            div
+                include:code(line=7) ./redux.js
+        br
+        code-point(step-initial='inline-hidden', step-coroutine='')
+            div
+                include:code(line=25) ./redux.js
+            div
+                include:code(line=26) ./redux.js
+            div
+                include:code(line=27) ./redux.js
+            div
+                include:code(line=28) ./redux.js
+            div
+                include:code(line=29) ./redux.js
+            code-point(step-initial='active')
+                include:code(line=30) ./redux.js
+            div
+                include:code(line=31) ./redux.js
+    code-point(step-initial='block-hidden', step-reducer='', step-dispatch='block-hidden').step-block-hidden
+            div
+                include:code(line=9) ./redux.js
+            div
+                include:code(line=10) ./redux.js
+            div
+                include:code(line=11) ./redux.js
+            div
+                include:code(line=12) ./redux.js
+            div
+                include:code(line=13) ./redux.js
+            div
+                include:code(line=14) ./redux.js
+            div
+                include:code(line=15) ./redux.js
+            div
+                include:code(line=16) ./redux.js
+            div
+                include:code(line=17) ./redux.js
+            div
+                include:code(line=18) ./redux.js
+            div
+                include:code(line=19) ./redux.js
+            div
+                include:code(line=20) ./redux.js
+            div
+                include:code(line=21) ./redux.js
+            div
+                include:code(line=22) ./redux.js
+            div
+                include:code(line=23) ./redux.js
+    code-point(step-initial='block-hidden', step-dispatch='', step-event-emitter='block-hidden').step-block-hidden
+            div
+                include:code(line=33) ./redux.js
+            div
+                include:code(line=34) ./redux.js
+            div
+                include:code(line=35) ./redux.js
+            div
+                include:code(line=36) ./redux.js
+            div
+                include:code(line=37) ./redux.js
+            br
+            div
+                include:code(line=39) ./redux.js
+            div
+                include:code(line=40) ./redux.js
+            div
+                include:code(line=41) ./redux.js
+            div
+                include:code(line=42) ./redux.js
+            div
+                include:code(line=43) ./redux.js
+            div
+                include:code(line=44) ./redux.js
+            div
+                include:code(line=41) ./redux.js
+    code-point(step-initial='block-hidden', step-event-emitter='', step-store='block-hidden').step-block-hidden
+            div
+                include:code(line=46) ./redux.js
+            div
+                include:code(line=47) ./redux.js
+            br
+            div
+                include:code(line=49) ./redux.js
+            div
+                include:code(line=50) ./redux.js
+            div
+                include:code(line=51) ./redux.js
+            div
+                include:code(line=53) ./redux.js
+            div
+                include:code(line=54) ./redux.js
+            div
+                include:code(line=55) ./redux.js
+            div
+                include:code(line=56) ./redux.js
+            div
+                include:code(line=58) ./redux.js
+            div
+                include:code(line=59) ./redux.js
+            br
+            div
+                include:code(line=61) ./redux.js
+            div
+                include:code(line=62) ./redux.js
+            div
+                include:code(line=63) ./redux.js
+            div
+                include:code(line=64) ./redux.js
+            div
+                include:code(line=65) ./redux.js
+            div
+                include:code(line=66) ./redux.js
+    code-point(step-initial='block-hidden', step-store='', step-enjoy='block-hidden').step-block-hidden
+            div
+                include:code(line=68) ./redux.js
+            div
+                include:code(line=69) ./redux.js
+            div
+                include:code(line=70) ./redux.js
+            div
+                include:code(line=71) ./redux.js
+            div
+                include:code(line=73) ./redux.js
+            div
+                include:code(line=74) ./redux.js
+            div
+                include:code(line=75) ./redux.js
+            div
+                include:code(line=76) ./redux.js
+            div
+                include:code(line=77) ./redux.js
+            div
+                include:code(line=78) ./redux.js
+            div
+                include:code(line=80) ./redux.js
+            div
+                include:code(line=81) ./redux.js
+            div
+                include:code(line=82) ./redux.js
+            div
+                include:code(line=83) ./redux.js
+    code-point(step-initial='block-hidden', step-enjoy='')
+            div
+                include:code(line=85) ./redux.js
+            div
+                include:code(line=86) ./redux.js
+            div
+                include:code(line=87) ./redux.js
+            div
+                include:code(line=88) ./redux.js
+            div
+                include:code(line=89) ./redux.js
+            br
+            div
+                include:code(line=91) ./redux.js
+            div
+                include:code(line=92) ./redux.js
+            div
+                include:code(line=93) ./redux.js
+            br
+            div
+                include:code(line=95) ./redux.js
+            div
+                include:code(line=96) ./redux.js
