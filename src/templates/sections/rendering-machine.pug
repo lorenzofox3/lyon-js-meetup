@@ -19,7 +19,7 @@ block story
 block code
     div
         include:code(line=1) ./rendering-machine.js
-    code-point(step-initial='', step-next-1='active', step-next-2='')
+    code-point(step-initial='inline-hidden', step-next-1='active', step-next-2='')
         div
             include:code(line=2) ./rendering-machine.js
         div
@@ -31,21 +31,21 @@ block code
                 include:code(line=6) ./rendering-machine.js
             div
                 include:code(line=7) ./rendering-machine.js
-    code-point(step-initial='', step-next-2='active', step-next-3='')
+    code-point(step-initial='inline-hidden', step-next-2='active', step-next-3='')
         div
             include:code(line=8) ./rendering-machine.js
         div
             include:code(line=9) ./rendering-machine.js
         div
             include:code(line=10) ./rendering-machine.js
-    code-point(step-initial='', step-next-3='active', step-etc='')
+    code-point(step-initial='inline-hidden', step-next-3='active', step-etc='')
         div
             include:code(line=11) ./rendering-machine.js
         div
             include:code(line=12) ./rendering-machine.js
         div
             include:code(line=13) ./rendering-machine.js
-    div
+    code-point(step-initial='inline-hidden', step-next-1='')
         include:code(line=14) ./rendering-machine.js
     div
         include:code(line=15) ./rendering-machine.js
