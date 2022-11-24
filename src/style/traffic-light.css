@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     background-color: black;
+    gap: 8px;
+    padding: 8px;
     border-radius: 8px;
 }
 
@@ -11,8 +13,6 @@
     height: var(--size);
     background: darkgray;
     transition: background 0.5s;
-    border: 4px solid black;
-    box-sizing: border-box;
     border-radius: 50%;
 }
 
