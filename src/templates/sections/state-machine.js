@@ -30,10 +30,12 @@ const stateMachine = (gen) => {
 const getLightColor = stateMachine(trafficLight);
 
 const el = document.getElementById('traffic-light');
-const updateDOM = () => {
-  const color = getLightColor();
+const updateDOM = (color) => {
   el.classList.remove(...possibleStates);
   el.classList.add(color);
 };
 
-el.addEventListener('click', updateDOM);
+el.addEventListener('click', () => {
+  const color = getLightColor();
+  updateDOM(color);
+});
