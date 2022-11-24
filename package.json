@@ -1,0 +1,26 @@
+{
+  "name": "lyon-js-meetup",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "serve": "vite",
+    "build:templates": "node scripts/build-templates.js",
+    "build:templates:watch": "nodemon --watch src/templates -e js,pug scripts/build-templates.js",
+    "dev": "npm run build:templates:watch & npm run serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "prettier": {
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1",
+    "prismjs": "^1.29.0",
+    "pug": "^3.0.2",
+    "vite": "^3.2.2",
+    "zora": "^5.2.0"
+  }
+}
