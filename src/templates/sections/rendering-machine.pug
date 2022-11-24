@@ -1,0 +1,51 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#rendering-machine Suspend
+
+block story
+    +storyPoint('initial')
+        p trafficLight(): no execution
+    +storyPoint('next-1')
+        p First "next()"
+    +storyPoint('next-2')
+        p Second next()
+    +storyPoint('next-3')
+        p Third next()
+    +storyPoint('etc')
+        p etc
+
+block code
+    div
+        include:code(line=1) ./rendering-machine.js
+    code-point(step-initial='', step-next-1='active', step-next-2='')
+        div
+            include:code(line=2) ./rendering-machine.js
+        div
+            include:code(line=4) ./rendering-machine.js
+        code-point(step-inital='', step-next-3='', step-etc='active')
+            div
+                include:code(line=5) ./rendering-machine.js
+            div
+                include:code(line=6) ./rendering-machine.js
+            div
+                include:code(line=7) ./rendering-machine.js
+    code-point(step-initial='', step-next-2='active', step-next-3='')
+        div
+            include:code(line=8) ./rendering-machine.js
+        div
+            include:code(line=9) ./rendering-machine.js
+        div
+            include:code(line=10) ./rendering-machine.js
+    code-point(step-initial='', step-next-3='active', step-etc='')
+        div
+            include:code(line=11) ./rendering-machine.js
+        div
+            include:code(line=12) ./rendering-machine.js
+        div
+            include:code(line=13) ./rendering-machine.js
+    div
+        include:code(line=14) ./rendering-machine.js
+    div
+        include:code(line=15) ./rendering-machine.js
