@@ -1,0 +1,73 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#yield-assignation Yield and assignation
+
+block story
+    +storyPoint('initial')
+        p Getting the state from outside
+    +storyPoint('next-arg')
+        p Pass message/data to "next"
+    +storyPoint('first-call')
+        p Watch out the first call
+    +storyPoint('co-wrapper')
+        p coroutine wrapper
+    +storyPoint('dispatcher')
+        p main "Actor" behaves as a dispatcher
+
+block code
+    code-point(step-initial='', step-next-arg='block-hidden')
+        div
+            include:code(line=1) ./yield-assignation.js
+        div
+            include:code(line=2) ./yield-assignation.js
+        div
+            include:code(line=3) ./yield-assignation.js
+        div
+            include:code(line=4) ./yield-assignation.js
+        code-point(step-initial='active', step-next-arg='')
+            include:code(line=5) ./yield-assignation.js
+        div
+            include:code(line=6) ./yield-assignation.js
+        div
+            include:code(line=7) ./yield-assignation.js
+        div
+            include:code(line=8) ./yield-assignation.js
+        div
+            include:code(line=9) ./yield-assignation.js
+        div
+            include:code(line=10) ./yield-assignation.js
+    code-point(step-initial='block-hidden', step-next-arg='', step-dispatcher='block-hidden')
+        div
+            include:code(line=12) ./yield-assignation.js
+        code-point(step-next-arg='inline-hidden', step-first-call='active', step-co-wrapper='')
+            include:code(line=13) ./yield-assignation.js
+        div
+            include:code(line=14) ./yield-assignation.js
+        div
+            include:code(line=15) ./yield-assignation.js
+        div
+            include:code(line=16) ./yield-assignation.js
+        div
+            include:code(line=17) ./yield-assignation.js
+        br
+        code-point(step-initial='inline-hidden', step-co-wrapper='')
+            div
+                include:code(line=19) ./yield-assignation.js
+            div
+                include:code(line=20) ./yield-assignation.js
+            div
+                include:code(line=21) ./yield-assignation.js
+            code-point(step-next-arg='active')
+                include:code(line=22) ./yield-assignation.js
+            div
+                include:code(line=23) ./yield-assignation.js
+    code-point(step-initial='block-hidden', step-dispatcher='')
+        div
+            include:code(line=25) ./yield-assignation.js
+        div
+            include:code(line=26) ./yield-assignation.js
+        br
+        div
+            include:code(line=28) ./yield-assignation.js
