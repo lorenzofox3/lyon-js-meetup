@@ -51,7 +51,7 @@ define(
     try {
       while (true) {
         const viewModel = yield;
-        $el.textContent = viewModel.attributes.name;
+        $el.textContent = `Hello ${viewModel?.attributes?.name ?? ''}`;
       }
     } finally {
       console.log('removed');
