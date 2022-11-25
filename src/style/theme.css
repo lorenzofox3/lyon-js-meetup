@@ -10,18 +10,19 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-
     height: var(--section-height);
     overflow: hidden;
-}
-
-pre {
-    margin:0;
 }
 
 body * {
     box-sizing: inherit;
 }
+
+pre {
+    margin:0;
+    overflow: hidden auto;
+}
+
 
 p {
     max-width: 70ch;
@@ -68,6 +69,7 @@ main > *:nth-child(2n){
     grid-template-columns: 0.9fr 1.1fr;
     grid-template-areas: "head code"
                          "text code";
+    overflow: hidden;
 }
 
 .code-container {
