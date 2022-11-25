@@ -1,0 +1,156 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+  h2#framework Framework - basics
+
+block story
+  +storyPoint('initial')
+    p From coroutine to custom element
+  +storyPoint('render-function')
+    p "render" triggers the next tick
+  +storyPoint('registry')
+    p custom "define"
+  +storyPoint('usage')
+    p Use it
+  +storyPoint('observed-attributes')
+    p Reactive attributes
+
+block code
+  code-point(step-initial='', step-registry='block-hidden')
+    div
+        include:code(line=1) ./framework.js
+    code-point(step-initial='active', step-render-function='')
+        include:code(line=2) ./framework.js
+    div
+        include:code(line=3) ./framework.js
+    div
+        include:code(line=4) ./framework.js
+    div
+        include:code(line=5) ./framework.js
+    br
+    div
+        include:code(line=10) ./framework.js
+    div
+        include:code(line=11) ./framework.js
+    code-point(step-initial='active', step-render-function='')
+        div
+            include:code(line=12) ./framework.js
+        div
+            include:code(line=13) ./framework.js
+        div
+            include:code(line=14) ./framework.js
+        div
+            include:code(line=15) ./framework.js
+    code-point(step-initial='inline-hidden', step-render-function='active')
+        div
+            include:code(line=16) ./framework.js
+        div
+            include:code(line=17) ./framework.js
+    div
+        include:code(line=18) ./framework.js
+    br
+    code-point(step-initial='inline-hidden', step-render-function='active')
+        div
+            include:code(line=29) ./framework.js
+        div
+            include:code(line=30) ./framework.js
+        div
+            include:code(line=31) ./framework.js
+        div
+            include:code(line=32) ./framework.js
+        div
+            include:code(line=33) ./framework.js
+        div
+            include:code(line=34) ./framework.js
+    br
+    div
+        include:code(line=35) ./framework.js
+  code-point(step-initial='block-hidden', step-registry='', step-usage='block-hidden')
+    div
+        include:code(line=37) ./framework.js
+    div
+        include:code(line=38) ./framework.js
+    div
+        include:code(line=39) ./framework.js
+    code-point(step-registry='active')
+        div
+            include:code(line=40) ./framework.js
+        div
+            include:code(line=42) ./framework.js
+        div
+            include:code(line=43) ./framework.js
+    div
+        include:code(line=44) ./framework.js
+    div
+        include:code(line=45) ./framework.js
+    div
+        include:code(line=46) ./framework.js
+    br
+  code-point(step-initial='block-hidden', step-usage='', step-observed-attributes='block-hidden')
+    div
+        include:code(line=48) ./framework.js
+    div
+        include:code(line=49) ./framework.js
+    code-point(step-usage='active')
+        div
+            include:code(line=50) ./framework.js
+        div
+            include:code(line=52) ./framework.js
+        div
+            include:code(line=53) ./framework.js
+        div
+            include:code(line=54) ./framework.js
+        div
+            include:code(line=55) ./framework.js
+        div
+            include:code(line=59) ./framework.js
+    div
+        include:code(line=60) ./framework.js
+    div
+        include:code(line=61) ./framework.js
+    div
+        include:code(line=63) ./framework.js
+    div
+        include:code(line=64) ./framework.js
+    br
+    div
+        include:code(line=66) ./framework.js
+
+  code-point(step-initial='block-hidden', step-observed-attributes='')
+    div
+        include:code(line=1) ./framework.js
+    div
+        include:code(line=2) ./framework.js
+    code-point(step-observed-attributes='active')
+        include:code(line=3) ./framework.js
+    div
+        include:code(line=4) ./framework.js
+    div
+        include:code(line=5) ./framework.js
+    br
+    div
+        include:code(line=6) ./framework.js
+    code-point(step-observed-attributes='active')
+        include:code(line=7) ./framework.js
+    div
+        include:code(line=8) ./framework.js
+    div
+        include:code(line=9) ./framework.js
+    br
+    div
+        include:code(line=24) ./framework.js
+    div
+        include:code(line=25) ./framework.js
+    code-point(step-observed-attributes='active')
+        include:code(line=26) ./framework.js
+    div
+        include:code(line=27) ./framework.js
+    div
+        include:code(line=28) ./framework.js
+    br
+    div
+        include:code(line=35) ./framework.js
+
+
+
