@@ -23,7 +23,6 @@ pre {
     overflow: hidden auto;
 }
 
-
 p {
     max-width: 70ch;
     margin: 0;
@@ -36,6 +35,7 @@ h1, h2, h3 {
     display: grid;
     align-items: center;
     font-size: 1.6em;
+    padding: 0.8em;
 }
 
 main {

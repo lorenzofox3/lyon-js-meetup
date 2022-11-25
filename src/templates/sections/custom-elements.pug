@@ -1,0 +1,71 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#custom-elements Custom Elements
+
+block story
+    +storyPoint('extends')
+        p Extends native HTML Elements
+    +storyPoint('reactive-attributes')
+        p Define reactive attributes
+    +storyPoint('lifecycles')
+        p Element lifecycles
+    +storyPoint('registry')
+        p Element registry
+
+block code
+    code-point(step-extends='', step-registry='block-hidden')
+        code-point(step-extends='', step-reactive-attributes='faded')
+            code-point(step-extends='active', step-reactive-attributes='')
+                include:code(line=1) ./custom-elements.js
+            br
+            div
+                include:code(line=2) ./custom-elements.js
+            div
+                include:code(line=3) ./custom-elements.js
+            div
+                include:code(line=4) ./custom-elements.js
+        br
+        code-point(step-extends='inline-hidden', step-reactive-attributes='', step-lifecycles='faded')
+            div
+                include:code(line=6) ./custom-elements.js
+            code-point(step-reactive-attributes='active', step-lifecycles='')
+                include:code(line=7) ./custom-elements.js
+            div
+                include:code(line=8) ./custom-elements.js
+            br
+            div
+                include:code(line=10) ./custom-elements.js
+            div
+                include:code(line=11) ./custom-elements.js
+            div
+                include:code(line=12) ./custom-elements.js
+            br
+        code-point(step-extends='inline-hidden', step-lifecycles='')
+            div
+                include:code(line=14) ./custom-elements.js
+            div
+                include:code(line=15) ./custom-elements.js
+            div
+                include:code(line=16) ./custom-elements.js
+            br
+            div
+                include:code(line=18) ./custom-elements.js
+            div
+                include:code(line=19) ./custom-elements.js
+            div
+                include:code(line=20) ./custom-elements.js
+        code-point(step-extends='')
+            include:code(line=21) ./custom-elements.js
+        br
+    code-point(step-extends='block-hidden', step-registry='')
+        div
+            include:code(line=23) ./custom-elements.js
+        div
+            include:code(line=24) ./custom-elements.js
+        div
+            include:code(line=25) ./custom-elements.js
+        br
+        div
+            include:code(line=27) ./custom-elements.js

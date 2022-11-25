@@ -1,11 +1,10 @@
 import { getAttribute } from './utils/dom.js';
-import { compose, filter, first, trace } from './utils/fp.js';
+import { compose, filter, first } from './utils/fp.js';
 
 const getStepAttribute = getAttribute('step');
 const getIntersectingEntry = compose(
   first,
   filter(({ isIntersecting }) => isIntersecting)
-  // trace('entries')
 );
 
 export const StoryController = (gen) =>
