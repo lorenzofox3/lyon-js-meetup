@@ -47,7 +47,7 @@ const define = (tag, coroutine, opts = {}) => {
 
 define(
   'hello-world',
-  function* ({ $el }) {
+  function* helloWorldComp({ $el }) {
     try {
       while (true) {
         const viewModel = yield;

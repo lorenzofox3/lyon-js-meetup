@@ -15,6 +15,8 @@ block story
     p Use it
   +storyPoint('observed-attributes')
     p Reactive attributes
+  +storyPoint('lifecycles')
+    p Lifecycles
 
 block code
   code-point(step-initial='', step-registry='block-hidden')
@@ -117,7 +119,7 @@ block code
     div
         include:code(line=66) ./framework.js
 
-  code-point(step-initial='block-hidden', step-observed-attributes='')
+  code-point(step-initial='block-hidden', step-observed-attributes='', step-lifecycles='block-hidden')
     div
         include:code(line=1) ./framework.js
     div
@@ -151,6 +153,53 @@ block code
     br
     div
         include:code(line=35) ./framework.js
+  code-point(step-initial='block-hidden', step-lifecycles='')
+    div
+        include:code(line=1) ./framework.js
+    div
+        include:code(line=2) ./framework.js
+    div
+        include:code(line=3) ./framework.js
+    div
+        include:code(line=4) ./framework.js
+    div
+        include:code(line=5) ./framework.js
+    div
+        include:code(line=9) ./framework.js
+    br
+    div
+        include:code(line=20) ./framework.js
+    code-point(step-lifecycles='active')
+        include:code(line=21) ./framework.js
+    div
+        include:code(line=22) ./framework.js
+    div
+        include:code(line=35) ./framework.js
+    br
+    div
+        include:code(line=9) ./framework.js
+    br
+    div
+        include:code(line=50) ./framework.js
+    div
+        include:code(line=51) ./framework.js
+    div
+        include:code(line=52) ./framework.js
+    div
+        include:code(line=53) ./framework.js
+    div
+        include:code(line=54) ./framework.js
+    div
+        include:code(line=55) ./framework.js
+    div
+        include:code(line=56) ./framework.js
+    code-point(step-lifecycles='active')
+        include:code(line=57) ./framework.js
+    div
+        include:code(line=58) ./framework.js
+    div
+        include:code(line=59) ./framework.js
+
 
 
 
