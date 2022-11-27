@@ -1,0 +1,37 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#stateful Stateful component
+
+block story
+    +storyPoint('initial')
+        p Just use a local variable
+
+block code
+    div
+        include:code(line=1) ./stateful-component.js
+    div
+        include:code(line=2) ./stateful-component.js
+    code-point(step-initial='active')
+        include:code(line=3) ./stateful-component.js
+    br
+    div
+        include:code(line=5) ./stateful-component.js
+    code-point(step-initial='active')
+        include:code(line=6) ./stateful-component.js
+    div
+        include:code(line=7) ./stateful-component.js
+    div
+        include:code(line=8) ./stateful-component.js
+    br
+    div
+        include:code(line=10) ./stateful-component.js
+    div
+        include:code(line=11) ./stateful-component.js
+    div
+        include:code(line=12) ./stateful-component.js
+    div
+        include:code(line=13) ./stateful-component.js
+    div
+        include:code(line=14) ./stateful-component.js
