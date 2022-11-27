@@ -1,0 +1,97 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#controller Controllers
+
+block story
+    +storyPoint('injectables')
+        p Use delegation to stack responsibilities
+    +storyPoint('upgrade-render')
+        p Upgrade "render"
+    +storyPoint('connect')
+        P Connect the component
+    +storyPoint('controller')
+        p Draw the update logic into a container
+
+block code
+    code-point(step-injectables='', step-upgrade-render='block-hidden')
+        div
+            include:code(line=1) ./controller.js
+        div
+            include:code(line=2) ./controller.js
+        div
+            include:code(line=3) ./controller.js
+        div
+            include:code(line=4) ./controller.js
+        code-point(step-injectables='active')
+            include:code(line=5) ./controller.js        
+        div
+            include:code(line=6) ./controller.js
+        div
+            include:code(line=7) ./controller.js
+        div
+            include:code(line=8) ./controller.js
+        div
+            include:code(line=9) ./controller.js
+        br
+        div
+            include:code(line=11) ./controller.js
+        br
+        div
+            include:code(line=13) ./controller.js
+        div
+            include:code(line=14) ./controller.js
+        div
+            include:code(line=15) ./controller.js
+        div
+            include:code(line=16) ./controller.js
+        div
+            include:code(line=17) ./controller.js
+        div
+            include:code(line=18) ./controller.js
+
+    code-point(step-injectables='block-hidden', step-upgrade-render='',step-controller='block-hidden')
+        div
+            include:code(line=20) ./controller.js
+        div
+            include:code(line=21) ./controller.js
+        code-point(step-upgrade-render='active', step-connect='')
+            include:code(line=22) ./controller.js
+        div
+            include:code(line=23) ./controller.js
+        code-point(step-upgrade-render='active', step-connect='')
+            include:code(line=24) ./controller.js
+        div
+            include:code(line=25) ./controller.js
+        div
+            include:code(line=26) ./controller.js
+        div
+            include:code(line=27) ./controller.js
+        br
+        code-point(step-injectables='inline-hidden', step-connect='')
+            code-point(step-connect='active')
+                include:code(line=29) ./controller.js
+            br
+            div
+                include:code(line=31) ./controller.js
+            div
+                include:code(line=32) ./controller.js
+            code-point(step-connect='active')
+                include:code(line=33) ./controller.js
+            div
+                include:code(line=34) ./controller.js
+            div
+                include:code(line=35) ./controller.js
+            div
+                include:code(line=36) ./controller.js
+            code-point(step-connect='active')
+                include:code(line=37) ./controller.js
+            div
+                include:code(line=38) ./controller.js
+        div
+            include:code(line=39) ./controller.js
+
+
+
+
