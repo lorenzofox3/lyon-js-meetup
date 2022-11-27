@@ -130,3 +130,12 @@ code-point{
 .step-faded{
     opacity: 0.8;
 }
+
+#counter{
+    display: flex;
+    gap: 2em;
+}
+
+#counter button {
+    
+}
