@@ -1,0 +1,172 @@
+extends ./app-story.layout.pug
+include ../story-point.mixin.pug
+
+block heading
+    h2#template-lib Template lib
+
+block story
+    +storyPoint('initial')
+        p Imperative code is flexible but verbose
+    +storyPoint('template-lib')
+        p Use a template lib
+    +storyPoint('inversion-of-control-1')
+        p Inversion of control
+    +storyPoint('inversion-of-control-2')
+        p Build the coroutine
+
+
+block code
+    code-point(step-initial='', step-template-lib='block-hidden')
+        div
+            include:code(line=1) ./template-lib.js
+        div
+            include:code(line=2) ./template-lib.js
+        div
+            include:code(line=3) ./template-lib.js
+        div
+            include:code(line=4) ./template-lib.js
+        div
+            include:code(line=5) ./template-lib.js
+        br
+        div
+            include:code(line=7) ./template-lib.js
+        code-point(step-initial='active')
+            div
+                include:code(line=8) ./template-lib.js
+            div
+                include:code(line=9) ./template-lib.js
+            div
+                include:code(line=10) ./template-lib.js
+            br
+            div
+                include:code(line=12) ./template-lib.js
+            div
+                include:code(line=13) ./template-lib.js
+            div
+                include:code(line=14) ./template-lib.js
+        br
+        div
+            include:code(line=16) ./template-lib.js
+        div
+            include:code(line=17) ./template-lib.js
+        div
+            include:code(line=18) ./template-lib.js
+        div
+            include:code(line=19) ./template-lib.js
+        div
+            include:code(line=20) ./template-lib.js
+    code-point(step-initial='block-hidden', step-template-lib='', step-inversion-of-control-1='block-hidden')
+        code-point(step-template-lib='active')
+            include:code(line=22) ./template-lib.js
+        br
+        div
+            include:code(line=24) ./template-lib.js
+        div
+            include:code(line=25) ./template-lib.js
+        div
+            include:code(line=26) ./template-lib.js
+        div
+            include:code(line=27) ./template-lib.js
+        br
+        code-point(step-template-lib='active')
+            include:code(line=29) ./template-lib.js
+        div
+            include:code(line=30) ./template-lib.js
+        div
+            include:code(line=31) ./template-lib.js
+        div
+            include:code(line=32) ./template-lib.js
+        br
+        div
+            include:code(line=34) ./template-lib.js
+        div
+            include:code(line=35) ./template-lib.js
+        code-point(step-template-lib='active')
+            include:code(line=36) ./template-lib.js
+        div
+            include:code(line=37) ./template-lib.js
+        br
+        code-point(step-template-lib='active')
+            div
+                include:code(line=39) ./template-lib.js
+            div
+                include:code(line=40) ./template-lib.js
+            div
+                include:code(line=41) ./template-lib.js
+            div
+                include:code(line=42) ./template-lib.js
+            div
+                include:code(line=43) ./template-lib.js
+            div
+                include:code(line=44) ./template-lib.js
+        div
+            include:code(line=45) ./template-lib.js
+    code-point(step-initial='block-hidden', step-inversion-of-control-1='', step-inversion-of-control-2='block-hidden')
+        code-point(step-inversion-of-control-1='active')
+            include:code(line=47) ./template-lib.js
+        br
+        div
+            include:code(line=48) ./template-lib.js
+        br
+        code-point(step-inversion-of-control-1='active')
+            include:code(line=49) ./template-lib.js
+        div
+            include:code(line=50) ./template-lib.js
+        div
+            include:code(line=51) ./template-lib.js
+        div
+            include:code(line=52) ./template-lib.js
+        div
+            include:code(line=53) ./template-lib.js
+    code-point(step-initial='block-hidden', step-inversion-of-control-2='')
+        div
+            include:code(line=55) ./template-lib.js
+        div
+            include:code(line=56) ./template-lib.js
+        code-point(step-inversion-of-control-2='active')
+            include:code(line=57) ./template-lib.js
+        div
+            include:code(line=58) ./template-lib.js
+        div
+            include:code(line=59) ./template-lib.js
+        div
+            include:code(line=60) ./template-lib.js
+        div
+            include:code(line=61) ./template-lib.js
+        code-point(step-inversion-of-control-2='active')
+            div
+                include:code(line=62) ./template-lib.js
+            div
+                include:code(line=63) ./template-lib.js
+        div
+            include:code(line=64) ./template-lib.js
+        div
+            include:code(line=65) ./template-lib.js
+        br
+        div
+            include:code(line=67) ./template-lib.js
+    //code-point(step-initial='block-hidden', step-next-arg='', step-dispatcher='block-hidden')
+    //    div
+    //        include:code(line=12) ./template-lib.js
+    //    code-point(step-next-arg='inline-hidden', step-first-call='active', step-co-wrapper='')
+    //        include:code(line=13) ./template-lib.js
+    //    div
+    //        include:code(line=14) ./template-lib.js
+    //    div
+    //        include:code(line=15) ./template-lib.js
+    //    div
+    //        include:code(line=16) ./template-lib.js
+    //    div
+    //        include:code(line=17) ./template-lib.js
+    //    br
+    //    code-point(step-initial='inline-hidden', step-co-wrapper='')
+    //        div
+    //            include:code(line=19) ./template-lib.js
+    //        div
+    //            include:code(line=20) ./template-lib.js
+    //        div
+    //            include:code(line=21) ./template-lib.js
+    //        code-point(step-next-arg='active')
+    //            include:code(line=22) ./template-lib.js
+    //        div
+    //            include:code(line=23) ./template-lib.js
