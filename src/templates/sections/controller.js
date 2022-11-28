@@ -37,3 +37,28 @@ const CountDisplay = function* ({ store, $el }) {
     unsubscribe();
   }
 };
+
+const connectController = (component) =>
+  function* ({ $el, store, ...rest }) {
+    const { render } = $el;
+    $el.render = (arg = {}) => {
+      render({
+        ...arg,
+        state: store.getState(),
+      });
+    };
+
+    const unsubscribe = store.subscribe($el.render);
+
+    try {
+      yield* component({
+        $el,
+        store,
+        ...rest,
+      });
+    } finally {
+      unsubscribe();
+    }
+  };
+
+define('foo-bar', withStore(connectController(CountDisplay)));
