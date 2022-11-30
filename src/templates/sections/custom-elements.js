@@ -24,4 +24,4 @@ customElements.define('my-element', MyElement, {
   extends: 'p',
 });
 
-const html = `<my-element my-attr="foo">Some text content</my-element>`;
+const html = `<p is="my-element" my-attr="foo">Some text content</p>`;
